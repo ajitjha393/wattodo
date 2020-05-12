@@ -1,0 +1,62 @@
+{
+	"name": "wattodo",
+	"description": "A simple todo cli app in TS",
+	"version": "1.0.0",
+	"author": "Bishwajit jha @ajitjha393",
+	"bin": {
+		"wattodo": "./bin/run"
+	},
+	"bugs": "https://github.com/ajitjha393/wattodo/issues",
+	"dependencies": {
+		"@oclif/command": "^1.6.1",
+		"@oclif/config": "^1.15.1",
+		"@oclif/plugin-help": "^3.0.0",
+		"chalk": "^4.0.0",
+		"cli-table": "^0.3.1",
+		"inquirer": "^7.1.0",
+		"tslib": "^1.11.2"
+	},
+	"devDependencies": {
+		"@oclif/dev-cli": "^1.22.2",
+		"@types/cli-table": "^0.3.0",
+		"@types/inquirer": "^6.5.0",
+		"@types/node": "^10.17.21",
+		"eslint": "^5.16.0",
+		"eslint-config-oclif": "^3.1.0",
+		"eslint-config-oclif-typescript": "^0.1.0",
+		"globby": "^10.0.2",
+		"ts-node": "^8.10.1",
+		"typescript": "^3.8.3"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"files": [
+		"/bin",
+		"/lib",
+		"/npm-shrinkwrap.json",
+		"/oclif.manifest.json"
+	],
+	"homepage": "https://github.com/ajitjha393/wattodo",
+	"keywords": [
+		"oclif"
+	],
+	"license": "MIT",
+	"main": "lib/index.js",
+	"oclif": {
+		"commands": "./lib/commands",
+		"bin": "wattodo",
+		"plugins": [
+			"@oclif/plugin-help"
+		]
+	},
+	"repository": "ajitjha393/wattodo",
+	"scripts": {
+		"postpack": "rm -f oclif.manifest.json",
+		"posttest": "eslint . --ext .ts --config .eslintrc",
+		"prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+		"test": "echo NO TESTS",
+		"version": "oclif-dev readme && git add README.md"
+	},
+	"types": "lib/index.d.ts"
+}
